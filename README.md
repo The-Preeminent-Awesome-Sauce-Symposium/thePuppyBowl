@@ -8,14 +8,14 @@ From here we spread it out to our own individual branches. and from there we sep
 <BR><br>
   
 MAIN branch ---> Secondary Branch <<br>
-                                 \_____    Paige branch  <br>
-                                                        \___other branches<br>
-                                  \_____   Noah branch <br>
-                                                        \___other branches<br>
-                                   \_____  Dennis branch <br>
-                                                          \__ other branches<br>
-                                    \_____ Phelan branch <br>
-                                                            \__ other branches<br>
+                                ---Paige branch  <br>
+                                                        =====other branches<br>
+                                  ---Noah branch <br>
+                                                        =====other branches<br>
+                                   ---Dennis branch <br>
+                                                        =====other branches<br>
+                                    ---Phelan branch <br>
+                                                        =====other branches<br>
   <br>
                                      
 <BR>
