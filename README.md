@@ -1,5 +1,6 @@
 # thePuppyBowl
 Puppy Bowl (Cohort  2302-acc-et-web-pt-e ) the Pass
+THIS IS THE SECONDARY MAIN BRANCH. PUSH NEW CODE ONTO THIS BRANCH INSTEAD OF THE MAIN MAIN BRANCH. 
 
 <br>
 *****
