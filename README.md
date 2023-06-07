@@ -7,8 +7,8 @@ THIS IS THE SECONDARY MAIN BRANCH. PUSH/PULL NEW CODE ONTO THIS BRANCH INSTEAD O
 From here we spread it out to our own individual branches. and from there we separate it into our own other branches.
 <BR><br>
   
-MAIN branch (leave alone)
-  \-----> Secondary Branch (Edit branch) <<br>
+MAIN branch (leave alone)<br>
+  -------> SECONDARY MAIN BRANCH (Edit branch) <<br>
                                 ---Paige branch  <br>
                                                         =====other branches<br>
                                   ---Noah branch <br>
