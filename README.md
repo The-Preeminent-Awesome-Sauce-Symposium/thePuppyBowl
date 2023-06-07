@@ -1,24 +1,13 @@
 # thePuppyBowl
 Puppy Bowl (Cohort  2302-acc-et-web-pt-e ) the Pass
 <br>
+<br>
 <hr>
-THIS IS THE SECONDARY MAIN BRANCH. PUSH/PULL NEW CODE ONTO THIS BRANCH INSTEAD OF THE MAIN MAIN BRANCH. 
-
-From here we spread it out to our own individual branches. and from there we separate it into our own other branches.
-<BR><br>
-  
-MAIN branch (leave alone)<br>
-  -------> SECONDARY MAIN BRANCH (Edit branch) <<br>
-                                ---Paige branch  <br>
-                                                        =====other branches<br>
-                                  ---Noah branch <br>
-                                                        =====other branches<br>
-                                   ---Dennis branch <br>
-                                                        =====other branches<br>
-                                    ---Phelan branch <br>
-                                                        =====other branches<br>
-  <br>
-                                     
+NOAH BRANCH:
+This is your branch of the site, add your code to this branch.
+<hr>
+<br>
+           
 <BR>
 <hr>
 <br>
