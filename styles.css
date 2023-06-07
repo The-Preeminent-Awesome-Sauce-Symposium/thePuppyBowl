@@ -1,6 +1,12 @@
 body {
     background-color: black;
     color: white; 
+    height: 100%;
+    margin: 0px;
+    padding : 0px;
+    border: solid 2px;
+    width: 100vw;
+    height: 95vh;
 }
 
 *{
@@ -8,3 +14,37 @@ body {
     margin: 0;
     box-sizing: border-box;
   } 
+
+  table {
+    width: 100%;
+    border: solid 2px;
+    border-radius: 12px;
+    padding: 20px;
+    width: 100vw;
+    height: 95vh;
+    
+  }
+
+  th{
+    border: solid 2px;
+    border-radius: 12px;
+    background-color: green;
+  }
+  td{
+    border: solid 2px;
+    border-radius: 12px;
+  }
+
+ #pix
+  {
+    background-color: blue;
+    text-align: center;
+    width: 85%;
+  }
+
+  footer{
+    text-align: center;
+    float: bottom;
+    width: 100vw;
+    height: 5vh;
+  }
