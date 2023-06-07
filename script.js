@@ -1,7 +1,12 @@
 //DECLARATIONS:
 
+
+const loox = document.getElementById('template');
 const playerContainer = document.getElementById('all-players-container');
 const newPlayerFormContainer = document.getElementById('new-player-form');
+
+
+
 
 // Add your cohort name to the cohortName variable below, replacing the 'COHORT-NAME' placeholder: 
 // **********
@@ -199,7 +204,38 @@ const renderNewPlayerForm = async (players) => {
 
 const init = async () => {
 try{
-    playerContainer.innerHTML = `test1`
+    loox.innerHTML = 
+    `
+    <nav>
+    <table>
+    <tr>
+    <th>PLAYER NAME <br>
+    AND <br>
+    LOGO<br></th>
+    <th>horizontal nav bar function goes here</th>
+    </tr>
+    
+    <tr>
+    <td>column list01<br>
+    column list 02<br>
+    column list 03<br>
+    column list 04<br>
+    column list 05<br>
+    column list 06<br>
+    column list 07<br>
+    column list 08<br>
+    column list 09<br>
+    column list 10<br>
+    column list 11<br>
+    column list 12<br>
+    </td>
+
+    <td id = "pix"><h1>pictures info and form go here</h1></td>
+    </tr>
+
+    </table>
+    </nav>
+    `
 
     const players = await fetchAllPlayers();
     console.log(players)
