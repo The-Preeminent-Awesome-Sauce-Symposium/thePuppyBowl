@@ -3,6 +3,21 @@ Puppy Bowl (Cohort  2302-acc-et-web-pt-e ) the Pass
 <br>
 <hr>
 THIS IS THE SECONDARY MAIN BRANCH. PUSH/PULL NEW CODE ONTO THIS BRANCH INSTEAD OF THE MAIN MAIN BRANCH. 
+
+From here we spread it out to our own individual branches. and from there we separate it into our own other branches.
+<BR><br>
+  
+                                   
+                                       ______ Paige branch  < other branches<br>
+                                     / <br>
+                                    | _____  Dennis branch < other branches<br>
+MAIN branch ---> Secondary Branch <<br>
+                                    |\____   Noah branch < other branches<br>
+                                    |<br>
+                                     \_______  Phelan branch < other branches<br>
+  <br>
+                                     
+<BR>
 <hr>
 <br>
 *****
