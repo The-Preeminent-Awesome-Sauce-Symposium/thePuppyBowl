@@ -7,14 +7,15 @@ THIS IS THE SECONDARY MAIN BRANCH. PUSH/PULL NEW CODE ONTO THIS BRANCH INSTEAD O
 From here we spread it out to our own individual branches. and from there we separate it into our own other branches.
 <BR><br>
   
-                                   
-                                       ______ Paige branch  < other branches<br>
-                                     / <br>
-                                    | _____  Dennis branch < other branches<br>
 MAIN branch ---> Secondary Branch <<br>
-                                    |\____   Noah branch < other branches<br>
-                                    |<br>
-                                     \_______  Phelan branch < other branches<br>
+                                 \_____    Paige branch  <br>
+                                                        \___other branches<br>
+                                  \_____   Noah branch <br>
+                                                        \___other branches<br>
+                                   \_____  Dennis branch <br>
+                                                          \__ other branches<br>
+                                    \_____ Phelan branch <br>
+                                                            \__ other branches<br>
   <br>
                                      
 <BR>
