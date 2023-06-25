@@ -3,3 +3,28 @@
   margin: 0;
   box-sizing: border-box;
 }
+section{
+  display: flex;
+}
+h2{
+  /* display:flex; */
+  text-transform: capitalize;
+  text-align: center;
+}
+h1{
+  padding:30px;
+  text-transform: capitalize;
+  text-align: center;
+}
+p{
+  text-transform: capitalize;
+  text-align: center;
+  /* display: flex; */
+}
+div{
+  /* display:flex; */
+}
+img{
+  height: 180px;
+  /* padding:20px; */
+}
