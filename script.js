@@ -5,6 +5,7 @@ const newPlayerFormContainer = document.getElementById('new-player-form');
 const cohortName = '2302-ACC-ET-WEB-PT-E';
 // Use the APIURL variable for fetch requests
 const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/`;
+// https://fsa-puppy-bowl.herokuapp.com/api/2302-ACC-ET-WEB-PT-E/players
 
 
 /**
@@ -13,12 +14,12 @@ const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/`;
  */
 const fetchAllPlayers = async () => {
     try {
-         const response = await fetch( API_URL)
+         const response = await fetch(`${APIURL}players`);
       const players = await response.json();
       return players;
 
     } catch (err) {
-        console.error(error);
+        console.error(err);
     }
 };
 
@@ -34,7 +35,7 @@ const fetchSinglePlayer = async (playerId) => {
 
 const addNewPlayer = async (playerObj) => {
     try {
-        const response =await fetch (`${API_URL}/${id}`) `,{
+        const response =await fetch (`${API_URL}/${id}`,{
        method: 'POST',
         });
 
@@ -48,7 +49,7 @@ const addNewPlayer = async (playerObj) => {
 
 const removePlayer = async (playerId) => {
     try {
-       const response = await fetch (`${API_URL}/${id}`, {
+       const response = await fetch(`${API_URL}/${id}`, {
          method: 'REMOVE', 
         });
          const removedPlayer =await response.json();
@@ -81,7 +82,7 @@ const removePlayer = async (playerId) => {
 const renderAllPlayers = (playerList) => {
     try { 
         playerContainer.innerHTML= '';
-         playerList.forEach((player) => {
+         playerList.data.players.forEach((player) => {
        const playerElement = document.createElement('div');
        playerElement.classList.add('player');
         playerElement.innerHTML = `
@@ -89,7 +90,7 @@ const renderAllPlayers = (playerList) => {
         <p>${player.breed}</p>
         <p>${player.weight}</p>
         <p>${player.status}</p> 
-        <img scr =${player.image_url} class = img/>
+        <img src =${player.imageUrl} class = img/>
         <p>${player.teamId}>/p> 
         <p>${player.cohortId}>/p> 
 
@@ -98,7 +99,7 @@ const renderAllPlayers = (playerList) => {
 
     playerContainer.appendChild(playerElement);
 
-    const detailsButton = playerElement.getElementById('.details-button');
+    const detailsButton = playerElement.querySelector('.details-button');
 detailsButton.addEventListener('click', async (event) => {
   try {
     const id = event.target.dataset.id;
@@ -108,7 +109,7 @@ detailsButton.addEventListener('click', async (event) => {
   }
 });
 
-    const removeButton = playerElement.getElementById('.remove-button');
+    const removeButton = playerElement.querySelector('.remove-button');
     removeButton.addEventListener('click', async (event) => {
       try {
         const id = event.target.dataset.id;
@@ -142,6 +143,7 @@ const renderNewPlayerForm = (playerId) => {
 const init = async () => {
     const players = await fetchAllPlayers();
     renderAllPlayers(players);
+    console.log(players);
 
     renderNewPlayerForm();
 }
