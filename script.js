@@ -2,7 +2,7 @@ const playerContainer = document.getElementById('all-players-container');
 const newPlayerFormContainer = document.getElementById('new-player-form');
 
 // Add your cohort name to the cohortName variable below, replacing the 'COHORT-NAME' placeholder
-const cohortName = 'YOUR COHORT NAME HERE';
+const cohortName = '2302-ACC-ET-WEB-PT-E';
 // Use the APIURL variable for fetch requests
 const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/`;
 
@@ -12,36 +12,48 @@ const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/`;
  */
 const fetchAllPlayers = async () => {
     try {
+         const response = await fetch( API_URL)
+      const players = await response.json();
+      return players;
 
     } catch (err) {
-        console.error('Uh oh, trouble fetching players!', err);
+        console.error(error);
     }
 };
 
 const fetchSinglePlayer = async (playerId) => {
     try {
-
-    } catch (err) {
-        console.error(`Oh no, trouble fetching player #${playerId}!`, err);
+        const response = await fetch (`${API_URL}/${Id}`);
+      const player= await response.json();
+      return player
+ } catch (err) {
+        console.error( err);
     }
 };
 
 const addNewPlayer = async (playerObj) => {
     try {
+        const response =await fetch (`${API_URL}/${id}`) `,{
+       method: 'POST',
+        });
 
-    } catch (err) {
-        console.error('Oops, something went wrong with adding that player!', err);
+          const addedNewPlayer = await response.json();
+          return addedNewPlayer;
+        
+        } catch (err) {
+        console.error( err);
     }
 };
 
 const removePlayer = async (playerId) => {
     try {
-
-    } catch (err) {
-        console.error(
-            `Whoops, trouble removing player #${playerId} from the roster!`,
-            err
-        );
+       const response = await fetch (`${API_URL}/${id}`, {
+         method: 'REMOVE', 
+        });
+         const removedPlayer =await response.json();
+         return removedPlayer;
+       } catch (err) {
+        console.error( err);
     }
 };
 
@@ -66,19 +78,59 @@ const removePlayer = async (playerId) => {
  * @returns the playerContainerHTML variable.
  */
 const renderAllPlayers = (playerList) => {
-    try {
-        
-    } catch (err) {
-        console.error('Uh oh, trouble rendering players!', err);
-    }
+    try { 
+        playerContainer.innerHTML= '';
+         playerList.forEach((player) => {
+       const playerElement = document.createElement('div');
+       playerElement.classList.add('player');
+        playerElement.innerHTML = `
+        <h2>${player.name}</h2>
+        <p>${player.breed}</p>
+        <p>${player.weight}</p>
+        <p>${player.status}</p> 
+        <img scr =${player.image_url} class = img/>
+        <p>${player.teamId}>/p> 
+        <p>${player.cohortId}>/p> 
+
+        <button class="details-button" data-id="${player.id}">See Details</button>
+        <button class="remove-button" data-id="${player.id}">Remove from roster </button> `;
+
+    playerContainer.appendChild(playerElement);
+
+    const detailsButton = partyElement.getElementById('.details-button');
+detailsButton.addEventListener('click', async (event) => {
+  try {
+    const id = event.target.dataset.id;
+    renderPlayerById(id);
+  }  catch (error) {
+    console.error(error);
+  }
+});
+
+    const removeButton = partyElement.getElementById('.remove-button');
+    removeButton.addEventListener('click', async (event) => {
+      try {
+        const id = event.target.dataset.id;
+        await removePlayer(id);
+        const players = await fetchAllPlayers
+      } catch (error) {
+        console.error(error);
+      }
+    });
+});
+} catch (error) {
+  console.error(error);
+}
 };
+         
+                   
 
 
 /**
  * It renders a form to the DOM, and when the form is submitted, it adds a new player to the database,
  * fetches all players from the database, and renders them to the DOM.
  */
-const renderNewPlayerForm = () => {
+const renderNewPlayerForm = (playerId) => {
     try {
         
     } catch (err) {
