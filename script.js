@@ -6,6 +6,7 @@ const cohortName = '2302-ACC-ET-WEB-PT-E';
 // Use the APIURL variable for fetch requests
 const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/`;
 
+
 /**
  * It fetches all players from the API and returns them
  * @returns An array of objects.
