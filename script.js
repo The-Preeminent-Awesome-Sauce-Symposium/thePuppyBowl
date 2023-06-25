@@ -97,7 +97,7 @@ const renderAllPlayers = (playerList) => {
 
     playerContainer.appendChild(playerElement);
 
-    const detailsButton = partyElement.getElementById('.details-button');
+    const detailsButton = playerElement.getElementById('.details-button');
 detailsButton.addEventListener('click', async (event) => {
   try {
     const id = event.target.dataset.id;
@@ -107,7 +107,7 @@ detailsButton.addEventListener('click', async (event) => {
   }
 });
 
-    const removeButton = partyElement.getElementById('.remove-button');
+    const removeButton = playerElement.getElementById('.remove-button');
     removeButton.addEventListener('click', async (event) => {
       try {
         const id = event.target.dataset.id;
