@@ -1,7 +1,11 @@
 section{
   display: flex;
 }
+body{
+  background-color: rgb(66, 91, 67);
+}
 h2{
+  color: rgb(255, 255, 255);
   text-transform: capitalize;
   /* text-align: center; */
   margin-left:20px;
@@ -10,10 +14,12 @@ h2{
 }
 h1{
   padding:30px;
+  color: rgb(255, 255, 255);
   text-transform: capitalize;
   text-align: center;
 }
 p{
+  color: rgb(255, 255, 255);
   text-transform: capitalize;
   /* text-align: center; */
   margin-left:20px;
@@ -21,6 +27,7 @@ p{
   margin-bottom: 1%;
 }
 div{
+  
 }
 img{
   height: 180px;
@@ -28,4 +35,5 @@ img{
 button{
   margin-left:20px;
   margin-top: 3%;
+  margin-bottom: 10%;
 }

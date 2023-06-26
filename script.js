@@ -1,5 +1,7 @@
 const playerContainer = document.getElementById('all-players-container');
 const newPlayerFormContainer = document.getElementById('new-player-form');
+const rosterContainer = document.getElementById('roster-container');
+const detailContainer = document.getElementById('detail-container');
 
 // Add your cohort name to the cohortName variable below, replacing the 'COHORT-NAME' placeholder
 const cohortName = '2302-ACC-ET-WEB-PT-E';
@@ -25,7 +27,7 @@ const fetchAllPlayers = async () => {
 
 const fetchSinglePlayer = async (playerId) => {
     try {
-        const response = await fetch (`${API_URL}/${Id}`);
+        const response = await fetch (`${APIURL}players/${playerId}`);
       const player= await response.json();
       return player
  } catch (err) {
@@ -79,46 +81,100 @@ const removePlayer = async (playerId) => {
  * @param playerList - an array of player objects
  * @returns the playerContainerHTML variable.
  */
+
+const updateDetails = (playerId) => {
+  try {
+        detailContainer.innerHTML= '';
+        const detailElement = document.createElement('div');
+        detailElement.classList.add('player');
+        detailElement.innerHTML = `
+        <img src =${playerId.data.player.imageUrl} class = img/>
+        <h2>${playerId.data.player.name}</h2>
+        <p>Breed: ${playerId.data.player.breed}</p>
+        <p>Status: ${playerId.data.player.status}</p>
+        <button class="remove-button" data-id="${playerId.data.player.id}">Close</button> 
+        `;
+        detailContainer.appendChild(detailElement);
+
+        const removeButton = detailElement.querySelector('.remove-button');
+        removeButton.addEventListener('click', async (event) => {
+        try {
+        detailContainer.removeChild(detailElement);
+        } catch (error) {
+        console.error(error);
+        }
+        });
+
+  } catch (err) {
+      console.error('Uh oh, trouble updating the roster!', err);
+  }
+}
+
+const updateRoster = (playerId) => {
+  try {
+        //console.log(playerId);
+        const rosterElement = document.createElement('div');
+        rosterElement.classList.add('player');
+        rosterElement.innerHTML = `
+        <img src =${playerId.data.player.imageUrl} class = img/>
+        <h2>${playerId.data.player.name}</h2>
+        <button class="remove-button" data-id="${playerId.data.player.id}">Remove from Roster </button> 
+        `;
+        rosterContainer.appendChild(rosterElement);
+
+        const removeButton = rosterElement.querySelector('.remove-button');
+        removeButton.addEventListener('click', async (event) => {
+        try {
+        rosterContainer.removeChild(rosterElement);
+        } catch (error) {
+        console.error(error);
+        }
+        });
+
+  } catch (err) {
+      console.error('Uh oh, trouble updating the roster!', err);
+  }
+}
+
 const renderAllPlayers = (playerList) => {
-    try { 
+    try {
         playerContainer.innerHTML= '';
          playerList.data.players.forEach((player) => {
        const playerElement = document.createElement('div');
        playerElement.classList.add('player');
         playerElement.innerHTML = `
-        <h2>${player.name}</h2>
-        <p>${player.breed}</p>
-        <p>${player.weight}</p>
-        <p>${player.status}</p> 
         <img src =${player.imageUrl} class = img/>
-        <p>${player.teamId}>/p> 
-        <p>${player.cohortId}>/p> 
+        <h2>${player.name}</h2>
 
         <button class="details-button" data-id="${player.id}">See Details</button>
-        <button class="remove-button" data-id="${player.id}">Remove from roster </button> `;
+        <button class="add-button" data-id="${player.id}">Add to Roster</button>
+        `;
 
     playerContainer.appendChild(playerElement);
 
     const detailsButton = playerElement.querySelector('.details-button');
-detailsButton.addEventListener('click', async (event) => {
-  try {
-    const id = event.target.dataset.id;
-    renderPlayerById(id);
-  }  catch (error) {
+    detailsButton.addEventListener('click', async (event) => {
+    try {
+      const id = event.target.dataset.id;
+      const newPlayer = await fetchSinglePlayer(player.id);
+      updateDetails(newPlayer);
+    }  catch (error) {
     console.error(error);
-  }
-});
+    }
+    });
 
-    const removeButton = playerElement.querySelector('.remove-button');
-    removeButton.addEventListener('click', async (event) => {
+    const addButton = playerElement.querySelector('.add-button');
+    addButton.addEventListener('click', async (event) => {
       try {
-        const id = event.target.dataset.id;
-        await removePlayer(id);
-        const players = await fetchAllPlayers
+          const id = event.target.dataset.id;
+          const newPlayer = await fetchSinglePlayer(player.id);
+          updateRoster(newPlayer);
+        
       } catch (error) {
         console.error(error);
       }
     });
+
 });
 } catch (error) {
   console.error(error);
